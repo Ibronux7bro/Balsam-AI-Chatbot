@@ -98,7 +98,7 @@ def chat():
     if best_match:
         return jsonify({"answer": best_match})
 
-    return jsonify({"error": "I couldn't find a precise answer. Please consult a doctor. لم أستطع العثور على إجابة دقيقة. يرجى استشارة طبيب مختص."}), 500
+    return jsonify({"error": "I couldn't find a precise answer. Please consult a doctor. لم أستطع العثور على إجابة دقيقة. يرجى استشارة طبيب مختص."}), 200
 
 @app.route('/tts', methods=['POST'])
 def tts_generate():

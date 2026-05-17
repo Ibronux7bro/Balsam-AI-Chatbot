@@ -1,73 +1,32 @@
-# قاعدة المعرفة واللوائح الأكاديمية - مهره وفاطمه (Bilingual / ثنائي اللغة)
+# قاعدة المعرفة الخاصة بالإسعافات الأولية والصحة - المساعد "بلسم"
+# Health & First-Aid Knowledge Base - "Balsam" Assistant
 
-## 1. القواعد باللغة العربية (Arabic Rules)
-1. **فترة التسجيل (Registration Period):** تَبْدَأُ قَبْلَ أُسْبُوعَيْنِ مِنَ الفَصْلِ الدِّرَاسِيِّ.
-2. **الحذف والإضافة (Add/Drop):** تَعْدِيلُ الجَدْوَلِ فِي الأُسْبُوعِ الأَوَّلِ دُونَ تَأْثِيرٍ عَلَى المُعَدَّلِ.
-3. **الانسحاب بتقدير W (Withdrawal):** اِنْسِحَابٌ مِنْ مَادَّةٍ حَتَّى الأُسْبُوعِ الثَّامِنِ، لَا يَدْخُلُ فِي المُعَدَّلِ.
-4. **الاعتذار عن الفصل (Semester Deferral):** إِيقَافُ الدِّرَاسَةِ لِفَصْلٍ كَامِلٍ بِعُذْرٍ مَقْبُولٍ.
-5. **تأجيل القبول (Admission Deferral):** تَأْجِيلُ بَدْءِ الدِّرَاسَةِ لِفَصْلٍ وَاحِدٍ أَوْ فَصْلَيْنِ.
-6. **الحد الأدنى للساعات (Min credits):** 12 سَاعَةً مُعْتَمَدَةً لِلْفَصْلِ الوَاحِدِ.
-7. **الحد الأقصى للساعات (Max credits):** 18 سَاعَةً عَادِيّ، 21 سَاعَةً لِلْمُتَفَوِّقِينَ.
-8. **المعدل التراكمي (GPA):** مَجْمُوعُ نِقَاطِ المَوَادِّ مَقْسُوماً عَلَى مَجْمُوعِ السَّاعَاتِ.
-9. **الإنذار الأكاديمي (Academic Warning):** تَنْبِيهٌ إِذَا قَلَّ المُعَدَّلُ التَّرَاكُمِيُّ عَنْ 2.0.
-10. **الحرمان (Denial):** المَنْعُ مِنَ الاِخْتِبَارِ النِّهَائِيِّ إِذَا غَابَ الطَّالِبُ 25%.
-11. **غير مكتمل (Incomplete - I):** لِعُذْرٍ قَهْرِيٍّ مَنَعَ الطَّالِبَ مِنْ حُضُورِ الاِخْتِبَارِ النِّهَائِيِّ.
-12. **تقدير راسب (F):** عِنْدَ الرُّسُوبِ فِي المَادَّةِ أَو الغِيَابِ بِدُونِ عُذْرٍ.
-13. **درجة النجاح (Passing Grade):** عَادَةً تَكُونُ 60 دَرَجَةً مِنْ 100.
-14. **التظلم (Grade Appeal):** مُرَاجَعَةُ وَرَقَةِ الاِخْتِبَارِ خِلَالَ أُسْبُوعٍ مِنَ النَّتِيجَةِ.
-15. **لائحة الغش (Cheating):** تُؤَدِّي لِتَحْوِيلِ الطَّالِبِ لِلَجْنَةِ التَّأْدِيبِ وَقَدْ يُفْصَلُ.
-16. **متطلبات التخرج (Graduation):** إِكْمَالُ الخُطَّةِ وَمُعَدَّلٌ لَا يَقِلُّ عَنْ 2.0.
-17. **مرتبة الشرف الأولى (First Class Honors):** مُعَدَّلٌ بَيْنَ 3.90 وَ 4.00.
-18. **مرتبة الشرف الثانية (Second Class Honors):** مُعَدَّلٌ بَيْنَ 3.75 وَ 3.89.
-19. **الساعات المكتبية (Office Hours):** أَوْقَاتٌ مُخَصَّصَةٌ لِمُقَابَلَةِ الأُسْتَاذِ فِي مَكْتَبِهِ.
-20. **التحويل (Transfer):** مُتَاحٌ بَعْدَ الفَصْلِ الأَوَّلِ بِنَاءً عَلَى شُرُوطِ المُعَدَّلِ.
-21. **المكافآت والمساعدات المالية (Financial Aid):** تُصْرَفُ مُكَافَأَةٌ شَهْرِيَّةٌ لِلطَّالِبِ المُسْتَمِرِّ بِمُعَدَّلٍ يَتَجَاوَزُ 2.0، وَيُمْكِنُ التَّقَدُّمُ لِسُلْفَةٍ طَارِئَةٍ.
-22. **السكن الجامعي (Student Housing):** مُتَاحٌ لِلْطُّلَّابِ مِنْ خَارِجِ المَدِينَةِ بِنَاءً عَلَى تَوَفُّرِ الشَّوَاغِرِ الدَّاخِلِيَّةِ.
-23. **البطاقة الجامعية (University ID):** إِلْزَامِيَّةٌ لِدُخُولِ الحَرَمِ، وَيُطْلَبُ بَدَلُ فَاقِدٍ عَبْرَ عِمَادَةِ شُؤُونِ الطُّلَّابِ مُقَابِلَ رُسُومٍ رَمْزِيَّةٍ.
-24. **الأعذار الطبية (Medical Excuses):** تُقْبَلُ فَقَطْ مِنَ العِيَادَةِ الجَامِعِيَّةِ أَوْ مُسْتَشْفَىً حُكُومِيٍّ خِلَالَ 3 أَيَّامٍ مِنَ الغِيَابِ.
-25. **الأنشطة والأندية (Student Clubs):** التَّسْجِيلُ فِي الأَنْدِيَةِ الثَّقَافِيَّةِ وَالرِّيَاضِيَّةِ مُتَاحٌ بِبِدَايَةِ كُلِّ فَصْلٍ عَبْرَ البَوَّابَةِ.
-26. **ذوي الاحتياجات الخاصة (Special Needs):** تَوْفِيرُ لِجَانٍ خَاصَّةٍ وَوَقْتٍ إِضَافِيٍّ فِي الاِخْتِبَارَاتِ بِمُوجِبِ تَقْرِيرٍ طِبِّيٍّ مُعْتَمَدٍ.
-27. **المكتبة المركزية (Central Library):** يُسْمَحُ بِاسْتِعَارَةِ 5 كُتُبٍ لِمُدَّةِ أُسْبُوعَيْنِ لِطُلَّابِ البَكَالُورِيُوس.
-28. **النقل الجامعي (University Transport):** حَافِلَاتٌ مَجَّانِيَّةٌ تَنْطَلِقُ عَلَى رَأْسِ كُلِّ سَاعَةٍ بَيْنَ الكَلِيَّاتِ.
-29. **الدعم الفني (IT Support):** لِإِعَادَةِ ضَبْطِ كَلِمَةِ المُرُورِ أَوْ حَلِّ مَشَاكِلِ البَوَّابَةِ، يَرْجَى فَتْحُ تَذْكَرَةِ دَعْمٍ.
-30. **السجل الأكاديمي (Transcript):** يُمْكِنُ طَلَبُ نُسْخَةٍ رَسْمِيَّةٍ مَخْتُومَةٍ عَبْرَ البَوَّابَةِ أَوْ عِمَادَةِ القَبُولِ وَالتَّسْجِيلِ.
-31. **خدمة حساب المعدل (GPA Service):** لِحِسَابِ مُعَدَّلِكَ المُتَوَقَّعِ، يُرْجَى مَدِّنا بِالمَوَادِّ وَالدَّرَجَاتِ المُتَوَقَّعَةِ لِنَقُومَ بِحِسَابِهَا فَوراً لَكَ تِفَاعُلِياً.
-32. **خدمة حجز موعد (Academic Appointment):** لِحَجْزِ مَوْعِدٍ مَعَ مُرْشِدِكَ الأَكَادِيمِيِّ، يَرْجَى تَزْوِيدُنَا بِرَقَمِكَ الجَامِعِيِّ وَالوَقْتِ المُنَاسِبِ لَكَ خِلَالَ أَوْقَاتِ الدَّوَامِ الرَّسْمِيِّ.
-33. **خدمة الدعم الفني (Technical Support):** إِذَا كُنْتَ تِوَاجِهُ ضُعْفاً فِي البَوَّابَةِ أَوْ خَطَأً تِقْنِيّاً، زَوِّدْنَا بِرَقَمِكَ الجَامِعِيِّ وَوَصْفٍ لِلْمُشْكِلَةِ لِنَقُومَ بِإِصْدَارِ تَذْكَرَةِ دَعْمٍ لَكَ.
-34. **خدمة المكافآت والسكن (Housing & Aid Service):** لِتَقْيِيمِ حَالَتِكَ المَالِيَّةِ وَأَهْلِيَّتِكَ لِلسَّكَنِ، يُرْجَى إِعْطَائُنَا رَقَمَكَ الجَامِعِيَّ لِلْبَحْثِ فِي سِجِلاتِ العِمَادَةِ بِالذَّكَاءِ الاِصْطِنَاعِيِّ.
+## 1. الإسعافات الأولية باللغة العربية (Arabic First-Aid Rules)
+1. **قَاعِدَةٌ عَامَّةٌ (General Rule):** هَذِهِ الإِرْشَادَاتُ لِلْإِسْعَافَاتِ الأَوَّلِيَّةِ فَقَطْ وَلَا تُغْنِي أَبَداً عَنْ زِيَارَةِ الطَّبِيبِ أَوِ الاِتِّصَالِ بِالْإِسْعَافِ (رَقْمُ الإِسْعَافِ فِي الإِمَارَاتِ 998).
+2. **الحُرُوقُ البَسِيطَةُ (Minor Burns):** ضَعِ الجُزْءَ المَحْرُوقَ تَحْتَ مَاءٍ جَارٍ بَارِدٍ لِمُدَّةِ 10 إِلَى 15 دَقِيقَةً. لَا تَضَعِ الثَّلْجَ، وَلَا تَضَعْ مَعْجُونَ الأَسْنَانِ.
+3. **الجُرُوحُ وَالنَّزِيفُ (Cuts & Bleeding):** اِضْغَطْ بِقُوَّةٍ عَلَى الجُرْحِ بِاسْتِخْدَامِ قِطْعَةِ قُمَاشٍ نَظِيفَةٍ حَتَّى يَتَوَقَّفَ النَّزِيفُ، ثُمَّ اِغْسِلْهُ بِالْمَاءِ وَالصَّابُونِ وَقُمْ بِتَغْطِيَتِهِ بِضَمَادَةٍ.
+4. **الرُّعَافُ / نَزِيفُ الأَنْفِ (Nosebleed):** اِجْلِسْ وَأَمِلْ رَأْسَكَ لِلْأَمَامِ قَلِيلاً وَلَيْسَ لِلْخَلْفِ. اِضْغَطْ عَلَى الجُزْءِ اللَّيِّنِ مِنَ الأَنْفِ لِمُدَّةِ 10 دَقَائِقَ مُتَوَاصِلَةٍ.
+5. **ضَرْبَةُ الشَّمْسِ (Heatstroke):** اُنْقُلِ المُصَابَ لِمَكَانٍ بَارِدٍ أَوْ مُظَلَّلٍ، اِنْزِعِ المَلَابِسَ الزَّائِدَةَ، قُمْ بِتَبْرِيدِ جِسْمِهِ بِالْمَاءِ البَارِدِ أَوِ الكَمَّادَاتِ، وَاطْلُبِ الإِسْعَافَ فَوْراً.
+6. **الاِخْتِنَاقُ بِالْغُصَّةِ (Choking):** إِذَا كَانَ الشَّخْصُ وَاعِياً وَلَا يَسْتَطِيعُ السُّعَالَ، قُمْ بِإِجْرَاءِ 5 ضَرَبَاتٍ عَلَى الظَّهْرِ وَ 5 ضَغَطَاتٍ بَطْنِيَّةٍ (مُنَاوَرَةُ هَايْمْلِيخ).
+7. **فِقْدَانُ الوَعْيِ وَالتَّنَفُّسِ (Unconsciousness - CPR):** إِذَا كَانَ المُصَابُ فَاقِداً لِلْوَعْيِ وَلَا يَتَنَفَّسُ، اِتَّصِلْ بِالْإِسْعَافِ فَوْراً وَابْدَأْ بِالْإِنْعَاشِ القَلْبِيِّ الرِّئَوِيِّ (CPR) بِضَغَطَاتٍ قَوِيَّةٍ وَسَرِيعَةٍ فِي مُنْتَصَفِ الصَّدْرِ.
+8. **الاِلْتِوَاءَاتُ (Sprains):** اِتَّبِعْ قَاعِدَةَ R.I.C.E: رَاحَةٌ (Rest)، ثَلْجٌ (Ice) لِمُدَّةِ 20 دَقِيقَةً، ضَغْطٌ (Compression) بِرِبَاطٍ ضَاغِطٍ، وَرَفْعُ الطَّرَفِ المُصَابِ (Elevation).
+9. **التَّسَمُّمُ (Poisoning):** لَا تُجْبِرِ المُصَابَ عَلَى التَّقَيُّؤِ. اِتَّصِلْ بِمَرْكَزِ السُّمُومِ أَوِ الإِسْعَافِ فَوْراً وَاحْتَفِظْ بِعُلْبَةِ المَادَّةِ السَّامَّةِ لِيُرِيَهَا لِلْمُسْعِفِينَ.
+10. **نَوْبَاتُ الصَّرَعِ (Seizures):** أَبْعِدِ الأَشْيَاءَ الخَطِرَةَ مِنْ حَوْلِ المُصَابِ، ضَعْ وِسَادَةً نَاعِمَةً تَحْتَ رَأْسِهِ، ضَعْهُ عَلَى جَانِبِهِ بَعْدَ انْتِهَاءِ النَّوْبَةِ، وَلَا تَضَعْ أَيَّ شَيْءٍ فِي فَمِهِ.
+11. **لَدَغَاتُ الحَشَرَاتِ (Insect Bites):** أَزِلِ الإِبْرَةَ إِنْ وُجِدَتْ بِحَافَّةِ بِطَاقَةٍ، اِغْسِلِ المَكَانَ بِالْمَاءِ وَالصَّابُونِ، وَضَعْ كَمَّادَةً بَارِدَةً لِتَقْلِيلِ التَّوَرُّمِ.
+12. **حِسَابُ مُؤَشِّرِ كُتْلَةِ الجِسْمِ (BMI Service):** لِحِسَابِ مُؤَشِّرِ كُتْلَةِ جِسْمِكَ، يُرْجَى تَزْوِيدِي بِوَزْنِكَ (بِالْكِيلُوجْرَامِ) وَطُولِكَ (بِالسَّنْتِيمِتْرِ) وَسَأَقُومُ بِحِسَابِهِ لَكَ فَوْراً وَإِخْبَارِكَ بِالنَّتِيجَةِ.
+13. **خِدْمَةُ تَقْيِيمِ الأَعْرَاضِ المَبْدَئِيِّ (Symptoms Check Service):** إِذَا كُنْتَ تَشْعُرُ بِأَلَمٍ أَوْ تَعَبٍ، أَخْبِرْنِي بِالْأَعْرَاضِ الَّتِي تَشْعُرُ بِهَا وَمَتَى بَدَأَتْ، وَسَأُقَدِّمُ لَكَ إِرْشَادَاتٍ أَوَّلِيَّةً وَأَنْصَحُكَ بِالْخُطْوَةِ القَادِمَةِ.
 
-## 2. قواعد باللغة الإنجليزية (English Rules)
-1. **Registration Period:** Starts two weeks before the semester begins.
-2. **Add/Drop:** Modifying the schedule in the first week without affecting GPA.
-3. **Withdrawal (W):** Possible until the 8th week; it doesn't affect GPA.
-4. **Academic Warning:** Issued if the cumulative GPA falls below 2.0.
-5. **Denial (DN):** Prohibited from final exam if absences exceed 25%.
-6. **Minimum Credits:** 12 credit hours per semester.
-7. **Maximum Credits:** 18 standard, 21 for high-achievers.
-8. **GPA Calculation:** Total points divided by total credit hours.
-9. **Incomplete (I):** For students missing final exams due to valid excuses.
-10. **Semester Deferral:** Stopping studies for a full semester with a valid reason.
-11. **Admission Deferral:** Delaying entry for one or two semesters.
-12. **Failing Grade (F):** If a student fails or misses the exam without excuse.
-13. **Passing Grade:** Generally 60 out of 100 in most courses.
-14. **Grade Appeal:** Reviewing exam papers within one week of results.
-15. **Cheating Policy:** Results in disciplinary action or expulsion.
-16. **Graduation Requirements:** Completing the plan with at least a 2.0 GPA.
-17. **First Class Honors:** GPA between 3.90 and 4.00.
-18. **Second Class Honors:** GPA between 3.75 and 3.89.
-19. **Office Hours:** Dedicated times to meet professors in their offices.
-20. **Transferring Majors:** Available after the first semester based on GPA.
-21. **Financial Aid:** A monthly allowance is given to active students with a GPA above 2.0. Emergency loans are available.
-22. **Student Housing:** Available for out-of-town students based on vacancy.
-23. **University ID:** Mandatory for campus entry. Replacements can be requested from Student Affairs for a nominal fee.
-24. **Medical Excuses:** Accepted only from the university clinic or a public hospital within 3 days of absence.
-25. **Student Clubs:** Registration for cultural and sports clubs is available at the start of each semester via the portal.
-26. **Special Needs Support:** Special committees and extra exam time are provided upon submitting an approved medical report.
-27. **Central Library:** Undergraduates can borrow up to 5 books for two weeks.
-28. **University Transport:** Free shuttle buses run at the top of every hour between colleges.
-29. **IT Support:** To reset passwords or fix portal issues, please open a support ticket.
-30. **Transcript Request:** Official stamped transcripts can be requested via the portal or the Admission Deanship.
-31. **GPA Calculation Service:** To calculate your expected GPA, please provide your courses and expected grades, and we will calculate it for you interactively.
-32. **Academic Appointment Service:** To book an appointment with your academic advisor, please provide your University ID and preferred time during official working hours.
-33. **Technical Support Service:** If you are facing a portal issue or technical error, provide your University ID and a description of the problem so we can issue a support ticket.
-34. **Housing & Financial Aid Service:** We provide an AI assessment of your financial status and housing eligibility. Please provide your University ID to check Deanship records.
+## 2. English First-Aid Rules
+1. **General Rule:** These guidelines are for first aid only and do NOT replace visiting a doctor or calling an ambulance (Ambulance number in UAE is 998).
+2. **Minor Burns:** Hold the burned area under cool running water for 10 to 15 minutes. Do not apply ice or toothpaste.
+3. **Cuts & Bleeding:** Apply firm pressure to the wound with a clean cloth until bleeding stops, then wash with soap and water and cover with a bandage.
+4. **Nosebleed:** Sit up straight and lean slightly forward, not backward. Pinch the soft part of your nose shut for 10 continuous minutes.
+5. **Heatstroke:** Move the person to a cool place, remove excess clothing, cool them down with cold water or sponges, and call an ambulance immediately.
+6. **Choking:** If the person is conscious and cannot cough, perform 5 back blows followed by 5 abdominal thrusts (Heimlich maneuver).
+7. **Unconsciousness (CPR):** If the person is unresponsive and not breathing normally, call an ambulance immediately and begin CPR with hard, fast chest compressions.
+8. **Sprains:** Follow the R.I.C.E method: Rest, Ice (for 20 minutes), Compression (with a bandage), and Elevation.
+9. **Poisoning:** Do not induce vomiting. Call poison control or an ambulance immediately and keep the poison container to show the paramedics.
+10. **Seizures:** Clear the area of hazards, place something soft under their head, roll them onto their side after the seizure stops, and do NOT put anything in their mouth.
+11. **Insect Bites:** Remove the stinger if present using a card edge, wash the area with soap and water, and apply a cold compress to reduce swelling.
+12. **BMI Calculation Service:** To calculate your BMI, please provide your weight (in kg) and height (in cm), and I will calculate it interactively for you.
+13. **Symptoms Check Service:** If you feel unwell, tell me your symptoms and when they started. I will give you preliminary guidance and advise you on the next steps.

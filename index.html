@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Academic Advisor - Your smart companion for educational guidance.">
-    <title>مهره وفاطمه | المستشار الأكاديمي الذكي</title>
+    <meta name="description" content="AI First-Aid Assistant - Your smart companion for health guidance.">
+    <title>المساعد الصحي الذكي (بلسم)</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,21 +32,21 @@
     <div class="app-container">
         <aside class="sidebar">
             <div class="logo-section">
-                <img src="logo.png" alt="IMC Logo" class="logo-img">
+                <i class="fas fa-heartbeat" style="font-size: 3rem; color: #00ffcc; margin-bottom: 10px;"></i>
                 <div class="logo-text">
-                    <h1>المستشار الذكي</h1>
-                    <p>للشريعة والقانون (IMC)</p>
+                    <h1>المساعد الصحي</h1>
+                    <p>للإسعافات الأولية (بلسم)</p>
                 </div>
             </div>
 
             <nav class="side-nav">
                 <div class="nav-item active" id="navBtnChat" onclick="switchView('chat')">
-                    <i class="fas fa-comment-dots"></i>
-                    <span id="navChat">المحادثة المباشرة</span>
+                    <i class="fas fa-comment-medical"></i>
+                    <span id="navChat">المحادثة الطبية</span>
                 </div>
                 <div class="nav-item" id="navBtnKb" onclick="switchView('kb')">
-                    <i class="fas fa-book"></i>
-                    <span id="navKb">قاعدة المعرفة</span>
+                    <i class="fas fa-book-medical"></i>
+                    <span id="navKb">الدليل الصحي</span>
                 </div>
             </nav>
 
@@ -64,16 +64,12 @@
                     <p>فريق العمل المطور</p>
                 </div>
                 <ul class="team-list">
-                    <li>شيخه محمد الخالدي</li>
-                    <li>سيف حسن المرزوقي </li>
-                    <li>مهره غانم نصيب</li>
-                    <li>فاطمه علي البلوشي</li>
-                    <li>عاشه خالد</li>
+                    <li>مروة محمد علي صنقور<span>252120020</span></li>
                 </ul>
             </div>
 
             <footer class="sidebar-footer">
-                <p>&copy; 2026 AI Project</p>
+                <p>&copy; 2026 AI Health Project</p>
             </footer>
         </aside>
 
@@ -84,8 +80,8 @@
                         style="margin-inline-end: 15px; color: var(--primary);"><i class="fas fa-bars"></i></button>
                     <div class="status-indicator"></div>
                     <div class="names">
-                        <h2 id="headerTitle">المستشار الذكي</h2>
-                        <span id="headerStatus">متصل الآن</span>
+                        <h2 id="headerTitle">المساعد (بلسم)</h2>
+                        <span id="headerStatus">متصل الآن - جاهز للمساعدة</span>
                     </div>
                 </div>
                 <div class="header-actions">
@@ -96,8 +92,8 @@
             <!-- Knowledge Base View -->
             <div class="kb-container" id="kbView" style="display: none;">
                 <div class="kb-header-title">
-                    <h2>📚 قاعدة المعرفة الجامعية</h2>
-                    <p>جميع حقوق الطالب، اللوائح، والخدمات المسجلة في النظام.</p>
+                    <h2>📚 الدليل الصحي للإسعافات الأولية</h2>
+                    <p>دليلك السريع للتعامل مع الحالات الطارئة.</p>
                 </div>
                 <div class="kb-body" id="kbContentBody" dir="auto">
                     جاري التحميل...
@@ -107,19 +103,15 @@
             <div class="chat-content" id="chatContainer">
                 <div class="chat-date">اليوم</div>
                 <div class="message ai-bubble">
-                    <div class="avatar">M✿F</div>
+                    <div class="avatar">⚕️</div>
                     <div class="bubble-content">
-                        <p class="ar-text">مرحباً بك! أنا مستشارك الأكاديمي الذكي الخاص بكلية الإمام مالك، تم تطويري
-                            باحترافية بواسطة فريق العمل: شيخه، سيف، مهره، فاطمه، وعاشه. كيف يمكنني مساعدتك برحلتك
-                            التعليمية اليوم؟</p>
-                        <p class="en-text" style="display: none;">Welcome! I am your IMC AI Academic Advisor,
-                            professionally developed by: Shaikha, Saif, Mahra, Fatima, and Aysha. How can I assist you
-                            with your educational journey today?</p>
+                        <p class="ar-text">مرحباً بك! أنا "بلسم"، مساعدك الصحي الذكي وخبير الإسعافات الأولية. تذكر دائماً أنني هنا للإرشاد الأولي فقط ولا أغني عن استشارة الطبيب. كيف يمكنني مساعدتك في الحفاظ على صحتك اليوم؟</p>
+                        <p class="en-text" style="display: none;">Welcome! I am "Balsam", your AI Health and First-Aid Assistant. Remember, I am here for preliminary guidance only and do not replace a doctor. How can I assist with your health today?</p>
                         <div class="bubble-footer">
                             <button class="bubble-speak"
-                                onclick="playVoice(currentLang === 'ar-SA' ? 'مرحباً بك! أنا مستشارك الأكاديمي الذكي، تم تطويري بواسطة فريق العمل: شيخه، سيف، مهره، فاطمه، وعاشه. كيف يمكنني مساعدتك برحلتك التعليمية اليوم؟' : 'Welcome! I am your AI Academic Advisor, developed by: Shaikha, Saif, Mahra, Fatima, and Aysha. How can I assist you with your educational journey today?')"><i
+                                onclick="playVoice(currentLang === 'ar-SA' ? 'مَرْحَباً بِكَ! أَنَا بَلْسَم، مُسَاعِدُكَ الصِّحِّيُّ الذَّكِيُّ وَخَبِيرُ الإِسْعَافَاتِ الأَوَّلِيَّةِ. كَيْفَ يُمْكِنُنِي مُسَاعَدَتُكَ اليَوْمَ؟' : 'Welcome! I am Balsam, your AI Health and First-Aid Assistant. How can I assist you today?')"><i
                                     class="fas fa-volume-up"></i></button>
-                            <span class="time">01:43 AM</span>
+                            <span class="time">الآن</span>
                         </div>
                     </div>
                 </div>
@@ -127,7 +119,7 @@
 
             <div class="typing-indicator" id="typingIndicator" style="display: none;">
                 <span></span><span></span><span></span>
-                <p>جاري التفكير...</p>
+                <p>جاري التشخيص...</p>
             </div>
 
             <section class="interaction-center">
@@ -143,31 +135,31 @@
             <footer class="chat-input-section">
                 <div class="quick-actions" id="quickActions">
                     <button class="action-btn"
-                        onclick="triggerService(currentLang === 'ar-SA' ? 'احسب معدلي المحتمل هذا الفصل' : 'Calculate my likely GPA this semester')">
-                        <span class="ar-text">احسب معدلي 🧮</span>
-                        <span class="en-text" style="display: none;">Calculate GPA 🧮</span>
+                        onclick="triggerService(currentLang === 'ar-SA' ? 'كيف أتعامل مع حروق الدرجة الأولى؟' : 'How do I treat first-degree burns?')">
+                        <span class="ar-text">حروق بسيطة 🔥</span>
+                        <span class="en-text" style="display: none;">Minor Burns 🔥</span>
                     </button>
                     <button class="action-btn"
-                        onclick="triggerService(currentLang === 'ar-SA' ? 'أريد حجز موعد مع مرشد أكاديمي' : 'I want to book an appointment with an academic advisor')">
-                        <span class="ar-text">حجز موعد 📅</span>
-                        <span class="en-text" style="display: none;">Book Appt 📅</span>
+                        onclick="triggerService(currentLang === 'ar-SA' ? 'ما هي خطوات الإنعاش القلبي الرئوي CPR؟' : 'What are the steps for CPR?')">
+                        <span class="ar-text">الإنعاش القلبي ❤️</span>
+                        <span class="en-text" style="display: none;">CPR Steps ❤️</span>
                     </button>
                     <button class="action-btn"
-                        onclick="triggerService(currentLang === 'ar-SA' ? 'ما هي المكافآت المالية ولوائح السكن؟' : 'What are the financial rewards and housing regulations?')">
-                        <span class="ar-text">مكافآت وسكن 🏠</span>
-                        <span class="en-text" style="display: none;">Housing & Aid 🏠</span>
+                        onclick="triggerService(currentLang === 'ar-SA' ? 'أريد حساب مؤشر كتلة الجسم BMI' : 'I want to calculate my BMI')">
+                        <span class="ar-text">حساب BMI ⚖️</span>
+                        <span class="en-text" style="display: none;">Calculate BMI ⚖️</span>
                     </button>
                     <button class="action-btn"
-                        onclick="triggerService(currentLang === 'ar-SA' ? 'أواجه مشكلة تقنية، أريد فتح تذكرة دعم' : 'I am facing a technical issue, I want to open a support ticket')">
-                        <span class="ar-text">دعم فني 🛠️</span>
-                        <span class="en-text" style="display: none;">IT Support 🛠️</span>
+                        onclick="triggerService(currentLang === 'ar-SA' ? 'أريد تقييم الأعراض التي أشعر بها الآن' : 'I want to check my current symptoms')">
+                        <span class="ar-text">تقييم الأعراض 🩺</span>
+                        <span class="en-text" style="display: none;">Check Symptoms 🩺</span>
                     </button>
                 </div>
                 <div class="input-container">
                     <button id="micBtn" class="mic-btn" title="تحدث">
                         <i class="fas fa-microphone"></i>
                     </button>
-                    <input type="text" id="manualInput" placeholder="اكتب سؤالك هنا..." autocomplete="off">
+                    <input type="text" id="manualInput" placeholder="اكتب حالتك أو سؤالك هنا..." autocomplete="off">
                     <button id="sendBtn" class="send-btn">
                         <i class="fas fa-paper-plane"></i>
                     </button>

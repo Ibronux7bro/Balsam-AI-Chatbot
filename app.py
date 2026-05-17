@@ -37,22 +37,23 @@ def chat():
 
     # System instructions
     system_instructions = (
-        "You are 'Mahra and Fatima', a professional and friendly AI Academic Advisor team. "
-        "YOUR PURPOSE IS STRICTLY ACADEMIC ADVISING ONLY. "
+        "You are 'Balsam', a professional, caring, and knowledgeable AI Health and First-Aid Assistant. "
+        "YOUR PURPOSE IS STRICTLY TO PROVIDE FIRST-AID GUIDANCE AND GENERAL HEALTH INFO. "
+        "IMPORTANT DISCLAIMER: Always remind the user that you are an AI, not a doctor, and they should call an ambulance (e.g., 998 in UAE) for real emergencies.\n"
         f"\nKnowledge Base Content (The Golden Rules):\n{KB_CONTENT}\n"
         "\nOPERATIONAL RULES:\n"
-        "1. ONLY answer questions related to academic regulations, advising, grades, registration, and university life as defined in the knowledge base.\n"
-        "2. If a user asks about ANY OTHER TOPIC, you MUST politely decline.\n"
-        "3. Maintain a scholarly tone and prioritize Knowledge Base facts.\n"
+        "1. ONLY answer questions related to health, first-aid, CPR, emergencies, and symptoms as defined in the knowledge base.\n"
+        "2. If a user asks about ANY OTHER TOPIC (like university rules, programming, sports), you MUST politely decline.\n"
+        "3. Maintain a calm, reassuring, and professional medical tone.\n"
         "4. Always respond in the same language as the user.\n"
         "5. IMPORTANT: When responding in Arabic, YOU MUST FULLY DIACRITIZE (تشكيل كامل بالفتحة والضمة والكسرة) every single word in your response to ensure accurate Text-To-Speech pronunciation.\n"
         "\nINTERACTIVE SERVICES MOCKING:\n"
-        "If a user asks for a service like calculating GPA (حساب المعدل), booking an appointment (حجز موعد), or opening a support ticket (فتح تذكرة دعم فني), you must act as an interactive agent. Ask them for the required details one by one (e.g. Student ID, courses, problem description). Once they provide the info, simulate the process and tell them it was successfully done."
+        "If a user asks for a service like calculating BMI (حساب مؤشر كتلة الجسم) or checking symptoms (تقييم الأعراض), you must act as an interactive agent. Ask them for the required details (Weight and Height for BMI, or detailed symptoms). Once provided, calculate the result or give advice based on their input."
     )
-    prompt = f"{system_instructions}\n\nUser Question: {user_input}\nAdvisor Mahra and Fatima's Response:"
+    prompt = f"{system_instructions}\n\nUser Question: {user_input}\nBalsam's Response:"
 
     # Try different models in case of quota/availability issues
-    models_to_try = ["gemini-1.5-flash", "gemini-pro"]
+    models_to_try = ["gemini-2.0-flash", "gemini-1.5-flash-8b", "gemini-1.5-flash"]
     
     last_error = ""
     for model_name in models_to_try:
@@ -77,7 +78,7 @@ def chat():
         if is_query_arabic and ("العربية" in section or "Arabic" in section):
             relevant_text = section
             break
-        elif not is_query_arabic and ("الإنجليزية" in section or "English" in section):
+        elif not is_query_arabic and ("English" in section):
             relevant_text = section
             break
     
@@ -96,7 +97,7 @@ def chat():
     if best_match:
         return jsonify({"answer": best_match})
 
-    return jsonify({"error": "I couldn't find a precise answer. لم أستطع العثور على إجابة دقيقة."}), 500
+    return jsonify({"error": "I couldn't find a precise answer. Please consult a doctor. لم أستطع العثور على إجابة دقيقة. يرجى استشارة طبيب مختص."}), 500
 
 @app.route('/tts', methods=['POST'])
 def tts_generate():

@@ -1,8 +1,8 @@
 :root {
-    --primary: #c084fc;       /* Beautiful Purple */
-    --primary-glow: rgba(192, 132, 252, 0.4);
-    --secondary: #38bdf8;     /* Cyan / Blue */
-    --secondary-glow: rgba(56, 189, 248, 0.4);
+    --primary: #10b981;       /* Medical Emerald Green */
+    --primary-glow: rgba(16, 185, 129, 0.4);
+    --secondary: #06b6d4;     /* Medical Cyan */
+    --secondary-glow: rgba(6, 182, 212, 0.4);
     --bg-dark: #0f172a;
     --bg-darker: #020617;
     --sidebar-bg: rgba(15, 23, 42, 0.4);
@@ -10,7 +10,7 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
-    --user-bubble: linear-gradient(135deg, #38bdf8, #818cf8);
+    --user-bubble: linear-gradient(135deg, #06b6d4, #3b82f6);
     --ai-bubble: rgba(255, 255, 255, 0.08);
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -63,7 +63,7 @@ body.rtl {
 
 .orb-1 { width: 500px; height: 500px; background: var(--primary); top: -150px; right: -150px; animation: float 25s infinite alternate ease-in-out; }
 .orb-2 { width: 450px; height: 450px; background: var(--secondary); bottom: -100px; left: -100px; animation: float 20s infinite alternate-reverse ease-in-out; }
-.orb-3 { width: 300px; height: 300px; background: #818cf8; top: 40%; left: 30%; animation: float 30s infinite alternate ease-in-out; }
+.orb-3 { width: 300px; height: 300px; background: #34d399; top: 40%; left: 30%; animation: float 30s infinite alternate ease-in-out; }
 
 @keyframes float {
     from { transform: translate(0, 0) scale(1); }
@@ -753,7 +753,7 @@ body.rtl .send-btn:hover { transform: scale(1.1) rotate(10deg); }
     margin-top: 3rem;
     margin-bottom: 1.5rem;
     padding: 1rem 1.5rem;
-    background: linear-gradient(90deg, rgba(192,132,252,0.15), transparent);
+    background: linear-gradient(90deg, rgba(16,185,129,0.15), transparent);
     border-radius: 14px;
     border-inline-start: 5px solid var(--primary);
     box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
@@ -782,7 +782,7 @@ body.rtl .send-btn:hover { transform: scale(1.1) rotate(10deg); }
 
 .kb-list li:hover {
     background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(192, 132, 252, 0.4);
+    border-color: rgba(16, 185, 129, 0.4);
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }

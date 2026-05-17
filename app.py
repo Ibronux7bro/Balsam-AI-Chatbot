@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
-# pyrefly: ignore [missing-import]
+import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 import base64

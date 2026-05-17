@@ -7,6 +7,7 @@ import base64
 from io import BytesIO
 import asyncio
 import edge_tts
+import re
 
 load_dotenv()
 
@@ -74,20 +75,20 @@ def chat():
     
     sections = KB_CONTENT.split('##')
     relevant_text = ""
-    for section in sections:
-        if is_query_arabic and ("العربية" in section or "Arabic" in section):
-            relevant_text = section
-            break
-        elif not is_query_arabic and ("English" in section):
-            relevant_text = section
-            break
-    
-    if not relevant_text: relevant_text = KB_CONTENT # Fallback to all if section not found
-
+    relevant_text = load_kb()
     kb_lines = relevant_text.split('\n')
     best_match = ""
+    
+    # Remove diacritics function
+    def strip_diacritics(text):
+        return re.sub(r'[\u064B-\u065F\u0670]', '', text)
+
+    user_input_lower = user_input.lower()
+    user_input_clean = strip_diacritics(user_input_lower)
+
     for line in kb_lines:
-        if any(word in line.lower() for word in user_input_lower.split()) and len(line) > 15:
+        line_clean = strip_diacritics(line.lower())
+        if any(word in line_clean for word in user_input_clean.split() if len(word) > 3) and len(line) > 15:
             clean_line = line.replace('**', '').strip()
             if ':' in clean_line: clean_line = clean_line.split(':')[-1].strip()
             elif '؟' in clean_line: clean_line = clean_line.split('؟')[-1].strip()

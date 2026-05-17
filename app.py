@@ -17,9 +17,17 @@ CORS(app)
 # Configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
-# Initialize Gemini
-genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel("gemini-2.0-flash")
+# Initialize Gemini safely
+AI_AVAILABLE = False
+try:
+    if GEMINI_API_KEY:
+        genai.configure(api_key=GEMINI_API_KEY)
+        AI_AVAILABLE = True
+        print(f"Gemini AI configured successfully.")
+    else:
+        print("WARNING: No GEMINI_API_KEY found. Running in KB-only fallback mode.")
+except Exception as e:
+    print(f"WARNING: Failed to configure Gemini: {e}. Running in KB-only fallback mode.")
 
 # Load Knowledge Base
 def load_kb():
@@ -30,75 +38,78 @@ def load_kb():
 
 KB_CONTENT = load_kb()
 
-@app.route('/chat', methods=['POST'])
-def chat():
-    user_input = request.json.get("message")
-    if not user_input:
-        return jsonify({"error": "No message provided"}), 400
+# Remove diacritics function
+def strip_diacritics(text):
+    return re.sub(r'[\u064B-\u065F\u0670]', '', text)
 
-    # System instructions
-    system_instructions = (
-        "You are 'Balsam', a professional, caring, and knowledgeable AI Health and First-Aid Assistant. "
-        "YOUR PURPOSE IS STRICTLY TO PROVIDE FIRST-AID GUIDANCE AND GENERAL HEALTH INFO. "
-        "IMPORTANT DISCLAIMER: Always remind the user that you are an AI, not a doctor, and they should call an ambulance (e.g., 998 in UAE) for real emergencies.\n"
-        f"\nKnowledge Base Content (The Golden Rules):\n{KB_CONTENT}\n"
-        "\nOPERATIONAL RULES:\n"
-        "1. ONLY answer questions related to health, first-aid, CPR, emergencies, and symptoms as defined in the knowledge base.\n"
-        "2. If a user asks about ANY OTHER TOPIC (like university rules, programming, sports), you MUST politely decline.\n"
-        "3. Maintain a calm, reassuring, and professional medical tone.\n"
-        "4. Always respond in the same language as the user.\n"
-        "5. IMPORTANT: When responding in Arabic, YOU MUST FULLY DIACRITIZE (تشكيل كامل بالفتحة والضمة والكسرة) every single word in your response to ensure accurate Text-To-Speech pronunciation.\n"
-        "\nINTERACTIVE SERVICES MOCKING:\n"
-        "If a user asks for a service like calculating BMI (حساب مؤشر كتلة الجسم) or checking symptoms (تقييم الأعراض), you must act as an interactive agent. Ask them for the required details (Weight and Height for BMI, or detailed symptoms). Once provided, calculate the result or give advice based on their input."
-    )
-    prompt = f"{system_instructions}\n\nUser Question: {user_input}\nBalsam's Response:"
-
-    # Try different models in case of quota/availability issues
-    models_to_try = ["gemini-2.0-flash", "gemini-1.5-flash-8b", "gemini-1.5-flash"]
+# Local KB search function
+def search_kb(user_input):
+    kb_lines = KB_CONTENT.split('\n')
+    user_input_clean = strip_diacritics(user_input.lower())
+    user_words = [word for word in user_input_clean.split() if len(word) > 2]
     
-    last_error = ""
-    for model_name in models_to_try:
-        try:
-            current_model = genai.GenerativeModel(model_name)
-            response = current_model.generate_content(prompt)
-            if response and response.text:
-                return jsonify({"answer": response.text})
-        except Exception as e:
-            last_error = str(e)
-            print(f"Model {model_name} failed: {last_error}")
-            continue
-
-    # LOCAL FALLBACK
-    print("All AI models failed. Using local KB search fallback.")
-    user_input_lower = user_input.lower()
-    is_query_arabic = any('\u0600' <= c <= '\u06FF' for c in user_input)
-    
-    sections = KB_CONTENT.split('##')
-    relevant_text = ""
-    relevant_text = load_kb()
-    kb_lines = relevant_text.split('\n')
-    best_match = ""
-    
-    # Remove diacritics function
-    def strip_diacritics(text):
-        return re.sub(r'[\u064B-\u065F\u0670]', '', text)
-
-    user_input_lower = user_input.lower()
-    user_input_clean = strip_diacritics(user_input_lower)
-
+    results = []
     for line in kb_lines:
         line_clean = strip_diacritics(line.lower())
-        if any(word in line_clean for word in user_input_clean.split() if len(word) > 3) and len(line) > 15:
+        if any(word in line_clean for word in user_words) and len(line.strip()) > 15:
             clean_line = line.replace('**', '').strip()
-            if ':' in clean_line: clean_line = clean_line.split(':')[-1].strip()
-            elif '؟' in clean_line: clean_line = clean_line.split('؟')[-1].strip()
-            best_match = clean_line
-            break
+            if clean_line.startswith('#'):
+                continue
+            results.append(clean_line)
+            if len(results) >= 3:
+                break
+    
+    return '\n'.join(results) if results else ""
 
-    if best_match:
-        return jsonify({"answer": best_match})
+@app.route('/chat', methods=['POST'])
+def chat():
+    try:
+        user_input = request.json.get("message")
+        if not user_input:
+            return jsonify({"error": "No message provided"}), 400
 
-    return jsonify({"error": "I couldn't find a precise answer. Please consult a doctor. لم أستطع العثور على إجابة دقيقة. يرجى استشارة طبيب مختص."}), 200
+        # System instructions
+        system_instructions = (
+            "You are 'Balsam', a professional, caring, and knowledgeable AI Health and First-Aid Assistant. "
+            "YOUR PURPOSE IS STRICTLY TO PROVIDE FIRST-AID GUIDANCE AND GENERAL HEALTH INFO. "
+            "IMPORTANT DISCLAIMER: Always remind the user that you are an AI, not a doctor, and they should call an ambulance (e.g., 998 in UAE) for real emergencies.\n"
+            f"\nKnowledge Base Content (The Golden Rules):\n{KB_CONTENT}\n"
+            "\nOPERATIONAL RULES:\n"
+            "1. ONLY answer questions related to health, first-aid, CPR, emergencies, and symptoms as defined in the knowledge base.\n"
+            "2. If a user asks about ANY OTHER TOPIC (like university rules, programming, sports), you MUST politely decline.\n"
+            "3. Maintain a calm, reassuring, and professional medical tone.\n"
+            "4. Always respond in the same language as the user.\n"
+            "5. IMPORTANT: When responding in Arabic, YOU MUST FULLY DIACRITIZE (تشكيل كامل بالفتحة والضمة والكسرة) every single word in your response to ensure accurate Text-To-Speech pronunciation.\n"
+            "\nINTERACTIVE SERVICES MOCKING:\n"
+            "If a user asks for a service like calculating BMI (حساب مؤشر كتلة الجسم) or checking symptoms (تقييم الأعراض), you must act as an interactive agent. Ask them for the required details (Weight and Height for BMI, or detailed symptoms). Once provided, calculate the result or give advice based on their input."
+        )
+        prompt = f"{system_instructions}\n\nUser Question: {user_input}\nBalsam's Response:"
+
+        # Try AI models if available
+        if AI_AVAILABLE:
+            models_to_try = ["gemini-2.0-flash", "gemini-2.0-flash-lite"]
+            for model_name in models_to_try:
+                try:
+                    current_model = genai.GenerativeModel(model_name)
+                    response = current_model.generate_content(prompt)
+                    if response and response.text:
+                        return jsonify({"answer": response.text})
+                except Exception as e:
+                    print(f"Model {model_name} failed: {e}")
+                    continue
+
+        # LOCAL FALLBACK - Search Knowledge Base
+        print("Using local KB search fallback.")
+        best_match = search_kb(user_input)
+
+        if best_match:
+            return jsonify({"answer": best_match})
+
+        return jsonify({"answer": "لم أستطع العثور على إجابة دقيقة. يرجى استشارة طبيب مختص.\nI couldn't find a precise answer. Please consult a doctor."})
+
+    except Exception as e:
+        print(f"Chat error: {e}")
+        return jsonify({"answer": "عذراً، حدث خطأ. يرجى المحاولة مرة أخرى."})
 
 @app.route('/tts', methods=['POST'])
 def tts_generate():

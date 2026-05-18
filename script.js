@@ -229,11 +229,14 @@ function addBubble(text, type) {
     const bubble = document.createElement('div');
     bubble.className = `message ${type}-bubble`;
     
-    const avatarChar = type === 'ai' ? 'M✿F' : 'U';
+    const avatarHTML = type === 'ai' 
+        ? `<img src="logo.png" alt="بلسم" class="avatar" style="object-fit: cover; border: 1px solid var(--glass-border);">`
+        : `<div class="avatar">U</div>`;
+        
     const speakBtn = type === 'ai' ? `<button class="bubble-speak" onclick="playVoice(\`${text.replace(/`/g, '\\`').replace(/\n/g, ' ')}\`)"><i class="fas fa-volume-up"></i></button>` : '';
 
     bubble.innerHTML = `
-        <div class="avatar">${avatarChar}</div>
+        ${avatarHTML}
         <div class="bubble-content">
             <p>${text}</p>
             <div class="bubble-footer">
